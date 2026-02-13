@@ -1,0 +1,310 @@
+# =============================================================================
+# YOUTUBE SCRAPER - GITIGNORE
+# =============================================================================
+
+
+# Environment files with API keys and passwords
+.env
+scraper-script/.env
+.env.*
+!.env.example
+!.env.template
+!.env.docker
+
+# API keys
+api_key.txt
+*.key
+*.pem
+secrets/
+
+# Database credentials
+database.ini
+db_config.json
+
+
+# ============================================
+# PYTHON
+# ============================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+virtualenv/
+pipenv/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+
+# ============================================
+# DATABASE
+# ============================================
+
+# Database files (if using SQLite)
+*.db
+*.sqlite
+*.sqlite3
+
+# Database dumps and backups
+*.sql
+!schema.sql
+backup*.sql
+dump*.sql
+*.dump
+
+# PostgreSQL
+*.pgdump
+*.backup
+
+
+# ============================================
+# LOGS
+# ============================================
+
+# Application logs
+logs/
+*.log
+scraper_*.log
+debug.log
+error.log
+
+# Log directories
+log/
+var/log/
+
+
+# ============================================
+# DOCKER
+# ============================================
+
+# Don't commit built images (but keep Dockerfile)
+# Docker Compose override files (local customizations)
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Docker volumes data
+postgres_data/
+pgdata/
+
+
+# ============================================
+# IDE / EDITORS
+# ============================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+.idea_modules/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.swp
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+
+# ============================================
+# OPERATING SYSTEM
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.Trash-*
+.directory
+.nfs*
+
+
+# ============================================
+# TEMPORARY / CACHE FILES
+# ============================================
+
+# General
+*.tmp
+*.temp
+*.bak
+*.swp
+*.cache
+
+# Python cache
+*.pyc
+.Python
+
+# Pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# ============================================
+# DATA FILES (OPTIONAL - DEPENDS ON YOUR NEEDS)
+# ============================================
+
+# Large data files
+# *.csv
+# *.json
+# *.parquet
+
+# Downloaded files
+downloads/
+data/raw/
+data/temp/
+
+
+# ============================================
+# DOCUMENTATION / NOTES (OPTIONAL)
+# ============================================
+
+# Personal notes
+notes.txt
+TODO.txt
+scratch.txt
+private_notes.md
+
+# Draft documentation
+DRAFT_*
+
+
+# ============================================
+# TESTING / DEVELOPMENT
+# ============================================
+
+# Test outputs
+test_output/
+test_data/
+playground/
+sandbox/
+
+# Development scripts
+dev_*.py
+test_*.py.local
+
+
+# ============================================
+# SECRETS / CREDENTIALS
+# ============================================
+
+# Any file with "secret" in name
+*secret*
+*SECRET*
+
+# Credential files
+credentials.json
+token.json
+auth.json
+
+
+# ============================================
+# SPECIFIC TO THIS PROJECT
+# ============================================
+
+# Scraped data you don't want to commit
+scraped_videos.json
+video_data/
+
+# Analysis outputs
+analysis_output/
+reports/
+
+# Archived old versions
+archive/
+old/
+
+
+# =============================================================================
+# EXPLANATION:
+# =============================================================================
+#
+# SECURITY CRITICAL:
+# - .env files contain API keys and database passwords
+# - NEVER commit these to Git, especially public repos
+#
+# PYTHON SPECIFIC:
+# - __pycache__ and *.pyc are compiled Python files (auto-generated)
+# - Virtual environments (venv/) contain installed packages (large, not needed)
+#
+# DATABASE:
+# - Backup files can be huge and contain sensitive data
+# - Keep schema.sql (table definitions) but ignore data dumps
+#
+# LOGS:
+# - Can grow very large
+# - May contain sensitive information
+# - Generated during runtime, not source code
+#
+# DOCKER:
+# - postgres_data/ contains actual database data (huge, auto-generated)
+# - docker-compose.override.yml is for local customizations
+#
+# IDE FILES:
+# - Personal preferences, not needed by others
+# - Can cause conflicts between team members
+#
+# =============================================================================
