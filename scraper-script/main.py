@@ -28,31 +28,31 @@ def main():
         # Example 1: Simple keyword search
         logger.info("\n📌 Example 1: Scraping by keyword")
         scraper.scrape_by_keyword(
-            keyword="python tutorial",
+            keyword="warframe",
             max_videos=50,
             fetch_transcripts=False,  # Set to True if you need transcripts
             fetch_comments=False       # Set to True if you need comments (quota-heavy!)
         )
 
         # Example 2: Multiple related keywords for one topic
-        logger.info("\n📌 Example 2: Multiple keywords for deep analysis")
-        keywords = ["machine learning tutorial", "ML beginner guide", "learn machine learning"]
+        #logger.info("\n📌 Example 2: Multiple keywords for deep analysis")
+        #keywords = ["machine learning tutorial", "ML beginner guide", "learn machine learning"]
 
-        for keyword in keywords:
-            scraper.scrape_by_keyword(
-                keyword=keyword,
-                max_videos=30,
-                fetch_transcripts=False,
-                fetch_comments=False
-            )
+       # for keyword in keywords:
+        #     scraper.scrape_by_keyword(
+        #         keyword=keyword,
+        #         max_videos=30,
+        #         fetch_transcripts=False,
+        #         fetch_comments=False
+        #     )
 
-        # Example 3: Scrape specific channel
-        logger.info("\n📌 Example 3: Scraping specific channel")
-        scraper.scrape_by_channel(
-            channel_id="UC8butISFwT-Wl7EV0hUK0BQ",  # freeCodeCamp
-            topic_keyword="programming education",
-            max_videos=20
-        )
+        # # Example 3: Scrape specific channel
+        # logger.info("\n📌 Example 3: Scraping specific channel")
+        # scraper.scrape_by_channel(
+        #     channel_id="UC8butISFwT-Wl7EV0hUK0BQ",  # freeCodeCamp
+        #     topic_keyword="programming education",
+        #     max_videos=20
+        # )
 
     except KeyboardInterrupt:
         logger.warning("\n⚠️  Scraping interrupted by user")
