@@ -162,7 +162,7 @@ def get_topic_analysis(topic_id: str):
                         vmh.comment_count,
                         CASE
                             WHEN vmh.view_count > 0
-                            THEN ROUND((vmh.like_count::float / vmh.view_count) * 100, 2)
+                            THEN ROUND((vmh.like_count::numeric  / vmh.view_count) * 100, 2)
                             ELSE 0
                         END as engagement_rate
                     FROM videos v
@@ -262,7 +262,7 @@ def get_topic_analysis(topic_id: str):
                         MAX(vmh.view_count) as max_views,
                         AVG(CASE
                             WHEN vmh.view_count > 0
-                            THEN (vmh.like_count::float / vmh.view_count) * 100
+                            THEN (vmh.like_count::numeric / vmh.view_count) * 100
                             ELSE 0
                         END) as avg_engagement_rate
                     FROM videos v
